@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #FirstPart{
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            margin-top: 6%;
+        }
+        #FirstPart>form>input{
+            height: 30px;
+            width: 200px;
+            text-align: center;
+            
+        }
+        #SecondPart{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 1%;
+        }
+        #SecondPart>input{
+            margin-top: 20px;
+            height: 30px;
+            width: 95px;
+            text-align: center;
+       
+        }
+        button{
+            margin-top: 20px;
+            height: 30px;
+            width: 210px;  
+        }
+        button:hover{
+            background-color: rgb(71, 148, 71);
+            color: white;
+            font-size: 20px;
+            border-radius: 5px;
+        }
+  
+
+    </style>
+</head>
+<body>
+    <div id="FirstPart">
+        <form>
+            <p>Name</p>
+            <input type="text" placeholder="Name">
+            <p>Card Number</p>
+            <input type="Number" placeholder="1234 5678 9123 4567" id="cardnumber">
+            <div id="SecondPart">
+                <input type="Number" placeholder="Expiry Date" id="Expiry">
+                <input type="Number" placeholder="CVV"id="cvv">
+            </div>
+            <br>
+          <input type="submit" value="payment">
+        </form>
+    </div>
+</body>
+<script>
+    document.querySelector("form").addEventListener("submit",function(){
+        event.preventDefault();
+       var cardnumber = document.getElementById("cardnumber").value;
+       if(cardnumber && cardnumber.length == 16){
+           alert("Sent Otp")
+       }else{
+           alert("Invalid Cardnumber")
+       } 
+       
+    });
+</script>
+</html>
